@@ -1,0 +1,19 @@
+{
+  "name": "Catextension",
+  "description" : "There's gonna be cats in here",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "cat_poo.png",
+    "48": "cat_poo.png",
+    "128": "cat_poo.png"
+  },
+  "permissions": ["tabs", "activeTab"],
+  "background": {
+    "page": "background.html",
+    "persistent": false
+  }
+}
