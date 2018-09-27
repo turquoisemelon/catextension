@@ -2,9 +2,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { getApiData } from './api_call.js';
 
 class App extends Component {
   sendRequest(request) {
+    getApiData()
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
       chrome.tabs.sendMessage(tabs[0].id, {action: request}, (response) => {
           alert(response);

@@ -11,7 +11,7 @@
     "48": "cat_poo.png",
     "128": "cat_poo.png"
   },
-  "permissions": ["tabs", "activeTab"],
+  "permissions": ["tabs", "https://api.giphy.com/v1/gifs/*"],
   "background": {
     "page": "background.html",
     "persistent": false

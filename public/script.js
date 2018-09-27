@@ -1,12 +1,10 @@
-import { getApiData } from './api_call.js';
-
 const processRequest = (data) => {
     if (data.action === 'getApiData') {
-        return new Promise(resolve => {
-            resolve(getApiData());
-        })
+        return new Promise((resolve, reject) => {
+            resolve();
+        });
     } else {
-        PromiseRejectionEvent(new Error('bad request'));
+        reject(new Error('bad request'));
     }
 
     return null;
@@ -15,10 +13,8 @@ const processRequest = (data) => {
 // respond to data requests
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     const result = processRequest(request);
-    console.log('result', result);
 
     if (!result) {
-        console.log('no response')
         return false; // no response
     }
 
