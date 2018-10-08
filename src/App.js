@@ -25,17 +25,17 @@ class App extends Component {
 
   componentDidMount() {
     getApiData().then((response) => {
-      console.log('response.data', response.data)
-      window.localStorage.setItem('API_DATA', response.data);
-      this.setState({isApiData: true})
-    })
+      const stringifiedJSONResponse = JSON.stringify(response)
+      window.localStorage.setItem('API_DATA', stringifiedJSONResponse);
+      this.setState({ isApiData: true })
+    });
   };
 
   render() {
     const transferableData = this.state.isApiData
       ? window.localStorage.getItem('API_DATA')
       : 'no data available';
-      
+
     return (
       <div className="App">
         <header className="App-header">

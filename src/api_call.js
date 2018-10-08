@@ -1,21 +1,23 @@
 export const getApiData = () => {
-    const giphyApiKey = process.env.giphyApiKey;
+    const giphyApiKey = 'EpqxowGYrbYfq2K6gtYy43LBWenkNtRD';
     const giphyTag = 'cat';
     const apiUrl = `https://api.giphy.com/v1/gifs/random?api_key=${giphyApiKey}&tag=${giphyTag}`;
-    return new Promise((resolve, reject) => {
-      let xhr = new XMLHttpRequest();
-      xhr.open('GET', apiUrl, true);
-      xhr.setRequestHeader('Authorization', `Bearer ${giphyApiKey}`);
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          const resp = JSON.parse(xhr.response);
-          resolve(resp);
-        } 
-        // else {
-        //   const error = new Error(xhr.statusText);
-        //   reject(error);
-        // }
-      };
-      xhr.send();
+    return fetch(apiUrl, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${giphyApiKey}`
+      }
+    }).then(response => {
+      if (!response.ok) {
+        const error = new Error(response.statusText);
+        error.response = response;
+        throw error;
+      }
+      return response.json();
+    }).then(json => {
+      return json;
+    }).catch(ex => {
+      console.log('parsing failed', ex)
     });
-}
+};
