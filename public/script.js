@@ -1,7 +1,7 @@
 const processRequest = (data) => {
     if (data.action === 'getApiData') {
         return new Promise((resolve, reject) => {
-            resolve();
+            resolve(data.message);
         });
     } else {
         reject(new Error('bad request'));

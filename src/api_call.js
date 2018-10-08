@@ -9,12 +9,12 @@ export const getApiData = () => {
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           const resp = JSON.parse(xhr.response);
-          console.log('resp', resp)
           resolve(resp);
-        } else {
-          const error = new Error(xhr.statusText);
-          reject(error);
-        }
+        } 
+        // else {
+        //   const error = new Error(xhr.statusText);
+        //   reject(error);
+        // }
       };
       xhr.send();
     });
