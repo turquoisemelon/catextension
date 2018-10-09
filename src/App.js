@@ -14,9 +14,13 @@ class App extends Component {
   }
 
   sendRequest(request) {
+    getApiData().then((response) => {
+      const stringifiedJSONResponse = JSON.stringify(response)
+      window.localStorage.setItem('API_DATA', stringifiedJSONResponse);
+      this.setState({ isApiData: true })
+    });
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
       chrome.tabs.sendMessage(tabs[0].id, {action: 'getApiData', message: request}, (response) => {
-        console.log('response', response)
         console.log('Response received from content script');
       });
     });
@@ -25,7 +29,7 @@ class App extends Component {
 
   componentDidMount() {
     getApiData().then((response) => {
-      const stringifiedJSONResponse = JSON.stringify(response)
+      const stringifiedJSONResponse = JSON.stringify(response);
       window.localStorage.setItem('API_DATA', stringifiedJSONResponse);
       this.setState({ isApiData: true })
     });
