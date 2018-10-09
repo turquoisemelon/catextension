@@ -44,3 +44,11 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
     return true; // signal that it will respond asyncronously
 });
+
+// When the user clicks anywhere outside of the modal, close it
+const extensionModal = document.getElementsByClassName('_extension-modal')[0];
+window.onclick = function (event) {
+    if (event.target == extensionModal) {
+        extensionModal.style.display = "none";
+    }
+}
