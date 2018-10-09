@@ -1,5 +1,5 @@
 export const getApiData = () => {
-    const giphyApiKey = 'EpqxowGYrbYfq2K6gtYy43LBWenkNtRD';
+    const giphyApiKey = process.env.API_KEY;
     const giphyTag = 'cat';
     const apiUrl = `https://api.giphy.com/v1/gifs/random?api_key=${giphyApiKey}&tag=${giphyTag}`;
     return fetch(apiUrl, {
