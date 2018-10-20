@@ -1,6 +1,6 @@
 {
-    "name": "Cat Extension",
-    "description": "There's gonna be cats in here",
+    "name": "Catify Extension",
+    "description": "Random cat gifs on your browser",
     "version": "0.0.1",
     "manifest_version": 2,
     "browser_action": {
