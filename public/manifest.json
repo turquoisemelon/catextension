@@ -11,7 +11,7 @@
     "48": "cat_poo.png",
     "128": "cat_poo.png"
   },
-  "permissions": ["https://*/*"],
+  "permissions": ["tabs", "https://api.giphy.com/*"],
   "content_scripts": [
     {
       "matches": [
@@ -19,8 +19,7 @@
       ],
       "js": [
         "script.js"
-      ],
-      "run_at": "document_end"
+      ]
     }
   ]
 }
