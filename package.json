@@ -1,17 +1,41 @@
 {
-  "name": "useless-extension",
-  "version": "0.1.0",
-  "private": true,
+  "name": "bridge-extension-example",
+  "version": "1.0.0",
+  "description": "Example extension code for Bridge Alumni C&C",
+  "main": "index.js",
   "dependencies": {
+    "dotenv-webpack": "^1.5.7",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-scripts": "1.1.5",
-    "whatwg-fetch": "^3.0.0"
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "copy-webpack-plugin": "^4.5.3",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/turquoisemelon/bridge-extension-example.git"
+  },
+  "author": "Meltem Kilic aka turquoisemelon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/turquoisemelon/bridge-extension-example/issues"
+  },
+  "homepage": "https://github.com/turquoisemelon/bridge-extension-example#readme"
 }
