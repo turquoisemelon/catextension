@@ -2,9 +2,14 @@ import React, {Component} from 'react';
 import './App.css';
 import { getApiData } from './api_call.js';
 
+// Cat by Denis Sazhin from the Noun Project
+const iconPath = require('./noun_cat.png');
+
 class App extends Component {
     constructor() {
         super();
+
+    this._iconUrl = chrome.runtime.getURL(iconPath);
 
         this.state = {
             isApiData: !!window
@@ -56,6 +61,9 @@ class App extends Component {
 
         return (
             <div className="App">
+            <div className="image-container">
+                <img src ={`${this._iconUrl}`} />
+            </div>
                 <button className="App-button" onClick={() => this.sendRequest(transferableData)}>Catify me</button>
             </div>
         );

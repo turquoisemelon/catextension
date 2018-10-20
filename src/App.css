@@ -1,18 +1,24 @@
 .App {
-    width: 140px;
-    height: 100px;
+    width: 180px;
+    height: 120px;
     text-align: center;
-    background-color: #f2f2f2;
+    background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 20px;
 }
 
 .App-button {
-    padding: 10px 20px;
-    background-color: #D33F49;
+    padding: 6px 12px;
+    background-color: #000;
     color: #fff;
     border: none;
     border-radius: 2px;
-    font-size: 18px;
+    font-size: 14px;
+}
+
+.image-container > img {
+    height: 100px;
+    width: 80px;
 }
