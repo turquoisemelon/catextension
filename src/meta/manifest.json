@@ -7,9 +7,9 @@
         "default_popup": "index.html"
     },
     "icons": {
-        "16": "cat-512.png",
-        "48": "cat-512.png",
-        "128": "cat-512.png"
+        "16": "cat-icon.png",
+        "48": "cat-icon.png",
+        "128": "cat-icon.png"
     },
     "permissions": ["tabs", "https://api.giphy.com/*"],
     "content_scripts": [{
